@@ -108,6 +108,9 @@ class Backend(abc.ABC):
             raise ActivityUnavailableError(
                 f"unable to fetch {iri}, server error ({resp.status_code})"
             )
+        elif resp.status_code == 406:
+            # The resource does not have an AP representation
+            raise NotAnActivityError(f"request failed with 406 Not Acceptable")
 
         resp.raise_for_status()
 

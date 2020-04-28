@@ -2,7 +2,7 @@ mdx_linkify
 bleach
 requests
 markdown
-pyld
+pyld<2.0
 pycryptodome
 html2text
 regex
